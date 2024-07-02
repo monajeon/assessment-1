@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body 
+        {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 20px;
+            border-radius: 19px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(39, 176, 179, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>change the background</h1> 
+        <button id="colorButton">Changecolor</button>  
+        <h1 class="color-name"></h1>
+    </div>
+
+
+    <script>
+        document.getElementById('colorButton').addEventListener('click', function() {
+        document.body.style.backgroundColor = Randcolorgen();
+    });
+        function Randcolorgen() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            document.querySelector('.color-name').innerHTML = color
+            return color;
+        }
+    </script>
+    
+</body>
+</html>
